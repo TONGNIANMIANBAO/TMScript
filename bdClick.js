@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         百度点击
 // @namespace    http://tampermonkey.net/
-// @version      0.12
+// @version      0.13
 // @description  百度首页跳过推荐页面
 // @license      MIT
 // @author       You
@@ -16,5 +16,5 @@
     'use strict';
     setTimeout(function() {
         document.querySelector("#s_menu_mine").click();
-    }, 1000);
+    }, 800);
 })();
