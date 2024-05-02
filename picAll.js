@@ -1,6 +1,4 @@
 (function() {
-    'use strict';
-
     let msg = document.querySelector('.uk-alert.uk-alert-danger.uk-text-center')?.innerText;
     if (!!msg && msg.includes('vip观看')) {
         //debugger;
@@ -9,6 +7,10 @@
         let imgList = imgText.match(regex);
         let mapRes = imgList.map((cur, index, arr) => { return cur.replaceAll('\\', ''); })
         console.log(mapRes);
+
+        let doc = document.querySelector('.uk-alert.uk-alert-danger.uk-text-center');
+        var myDiv = document.createElement('div');
+        doc.appendChild(myDiv); // 将图片添加到文档的body末尾
 
         mapRes.forEach((val, idx) => {
             // 创建一个img元素
@@ -25,7 +27,7 @@
             img.className = 'yourImageClass';
 
             // 将img元素插入到DOM中
-            document.body.appendChild(img); // 将图片添加到文档的body末尾
+            myDiv.appendChild(document.createElement('p')).appendChild(img); // 将图片添加到文档的body末尾
         })
     }
 })();
